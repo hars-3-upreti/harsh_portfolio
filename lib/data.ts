@@ -23,10 +23,15 @@ export const personalInfo = {
 
 export const dailyLog = [
   {
+    date: "april 1st, 2026 · 12:00am",
+    content:
+      "April Fools! This is a prank. The terminal portfolio is not actually live. I'm still working on it. But I'll get there. Thanks for playing along.",
+    isLive: true,
+  },
+  {
     date: "march 6th, 2026 · 12:58pm",
     content:
       "finally shipped the terminal portfolio. spent way too long on the katakana rain but it was worth it. this is now the most 'me' thing i've ever built.",
-    isLive: true,
   },
   {
     date: "march 5th, 2026 · 11:42pm",
