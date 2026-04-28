@@ -20,6 +20,8 @@ export default function GlitchText({
 }: GlitchTextProps) {
     const [displayed, setDisplayed] = useState(text);
     const [isGlitching, setIsGlitching] = useState(false);
+    
+    const Component = Tag as any;
 
     const glitch = useCallback(() => {
         if (isGlitching) return;
@@ -57,17 +59,19 @@ export default function GlitchText({
     }, [triggerOnMount, glitch]);
 
     return (
-        <Tag
-            className={`glitch-text ${className}`}
-            onMouseEnter={glitch}
-            data-text={text}
-            style={{
-                position: "relative" as const,
-                display: "inline-block",
-                fontFamily: "var(--font-mono)",
-            }}
-        >
-            {displayed}
+        <>
+            <Component
+                className={`glitch-text ${className}`}
+                onMouseEnter={glitch}
+                data-text={text}
+                style={{
+                    position: "relative" as const,
+                    display: "inline-block",
+                    fontFamily: "var(--font-mono)",
+                }}
+            >
+                {displayed}
+            </Component>
             <style>{`
         .glitch-text {
           position: relative;
@@ -98,6 +102,6 @@ export default function GlitchText({
           animation: glitch-skew 0.4s steps(2, end) 1;
         }
       `}</style>
-        </Tag>
+        </>
     );
 }

@@ -1,12 +1,12 @@
 "use client";
 
-import { MeshPhysicalMaterialProps } from "@react-three/fiber";
+import { ThreeElements } from "@react-three/fiber";
 import React from "react";
 
-interface GlassMaterialProps extends MeshPhysicalMaterialProps {
+type GlassMaterialProps = ThreeElements['meshPhysicalMaterial'] & {
   color?: string;
   iridescent?: boolean;
-}
+};
 
 export default function GlassMaterial({ 
   color = "#ffffff", 
