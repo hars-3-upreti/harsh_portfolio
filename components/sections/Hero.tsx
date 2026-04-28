@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import GlitchText from "@/components/GlitchText";
 import { personalInfo } from "@/lib/data";
 import { ChevronDown } from "lucide-react";
 
@@ -57,27 +56,24 @@ export default function Hero() {
                     {"> hello, world. i'm"}
                 </motion.p>
 
-                {/* Big glitch name */}
+                {/* Elegant Name Typography */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
                     style={{ marginBottom: "1rem" }}
                 >
-                    <GlitchText
-                        text={personalInfo.name}
-                        className="prompt"
-                        as="h1"
-                        triggerOnMount
-                    />
+                    <h1 className="hero-title">{personalInfo.name}</h1>
                     <style>{`
-            .prompt h1, h1.prompt {
+            .hero-title {
               font-size: clamp(2.5rem, 8vw, 5rem);
-              font-weight: 700;
-              color: var(--accent-primary);
-              text-shadow: var(--glow-green);
+              font-weight: 800;
+              color: #0f172a; /* Slate 900 for Light Mode */
+              letter-spacing: -1.5px;
               line-height: 1.1;
-              letter-spacing: -1px;
+              background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
           `}</style>
                 </motion.div>

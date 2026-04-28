@@ -9,8 +9,8 @@ const BOOT_LINES = [
     { text: "mounting filesystem................. [OK]", delay: 600 },
     { text: "[sys]: detecting user profile...", delay: 900 },
     { text: "[sys]: profile found — harsh upreti", delay: 1200 },
-    { text: "[sys]: loading anime subsystems... [OK]", delay: 1500 },
-    { text: "[sys]: enabling terminal interface... [OK]", delay: 1800 },
+    { text: "[sys]: loading visionary glass subsystems... [OK]", delay: 1500 },
+    { text: "[sys]: enabling 3D interface... [OK]", delay: 1800 },
     { text: "[sys]: all systems nominal.", delay: 2100 },
     { text: "[sys]: welcome back. let's build something.", delay: 2400 },
 ];
@@ -68,7 +68,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
                     style={{
                         position: "fixed",
                         inset: 0,
-                        background: "#000010",
+                        background: "#ffffff",
                         zIndex: 10000,
                         display: "flex",
                         alignItems: "center",
@@ -80,6 +80,12 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
                         style={{
                             maxWidth: "600px",
                             width: "100%",
+                            background: "rgba(255, 255, 255, 0.7)",
+                            backdropFilter: "blur(12px)",
+                            border: "1px solid rgba(0, 0, 0, 0.05)",
+                            borderRadius: "16px",
+                            padding: "2.5rem",
+                            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.05)",
                             fontFamily: "var(--font-mono)",
                             fontSize: "clamp(0.7rem, 2vw, 0.875rem)",
                             lineHeight: "2",
@@ -93,8 +99,8 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
                                 transition={{ duration: 0.3 }}
                                 style={{
                                     color: line.text.startsWith("[sys]")
-                                        ? "var(--accent-primary)"
-                                        : "#a0ffd0",
+                                        ? "#0284c7" // light blue for sys
+                                        : "#475569", // slate gray for normal
                                 }}
                             >
                                 {line.text}
@@ -110,7 +116,7 @@ export default function BootSequence({ onComplete }: BootSequenceProps) {
                                 <div
                                     style={{
                                         fontFamily: "var(--font-mono)",
-                                        color: "var(--accent-primary)",
+                                        color: "#0284c7",
                                         letterSpacing: "1px",
                                     }}
                                 >

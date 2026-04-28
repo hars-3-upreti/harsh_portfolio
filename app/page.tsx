@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BootSequence from "@/components/BootSequence";
-import KatakanaRain from "@/components/KatakanaRain";
-import ScanLines from "@/components/ScanLines";
 import NavBar from "@/components/NavBar";
 import MusicPlayer from "@/components/MusicPlayer";
 import CustomCursor from "@/components/CustomCursor";
+import GlobalCanvas from "@/components/canvas/GlobalCanvas";
+import HeroSculpture from "@/components/canvas/HeroSculpture";
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
 import DailyLog from "@/components/sections/DailyLog";
@@ -47,8 +47,9 @@ export default function Home() {
       {showBoot && <BootSequence onComplete={handleBootComplete} />}
 
       {/* Visual overlay layers */}
-      <KatakanaRain />
-      <ScanLines />
+      <GlobalCanvas>
+        <HeroSculpture />
+      </GlobalCanvas>
 
       {/* Main content */}
       <AnimatePresence>
